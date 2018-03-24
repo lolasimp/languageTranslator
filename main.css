@@ -1,5 +1,58 @@
 
 
 body{
-    background-color: rgb(38, 38, 136);
+    background-color: #7fdaf0;
+    margin: auto;
+    width: 30%;
+    padding: 11px;
+}
+.main-container{
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Bowlby One SC', cursive;
+    margin-top: 115px;
+    margin-bottom: 50px;
+    margin-left: 15px;
+    text-align: center;
+    display: flex;
+    color: #090c17d1;
+}
+
+textarea {
+    width: 348px;
+    height: 75px;
+}
+
+#spanishB {
+    margin-right: 20px;
+}
+
+#germanB {
+    margin-right: 20px;
+}
+
+#italianB {
+    margin-right: 20px;
+    margin-left: 2px;
+    padding-right: 22px;
+    padding-left: 17px;
+}
+
+
+input {
+    margin-bottom: 38px;
+    margin-left: -15px;
+}
+
+out-put {
+    width: 396px;
+    height: 75px;
+}
+
+div{
+    width: 116px;
+    display: flex;
+    padding: 30px;
 }
