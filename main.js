@@ -1,9 +1,8 @@
-function writeToDom(domString, domId) {
-    document.getElementById(domId).innerHTML = domString;
-}
+// function writeToDom(domString, domId) {
+//     document.getElementById(domId).innerHTML = domString;
+// }
 
-var languages = [
-    {
+const spanish = {
         "merry": "alegre", 
         "christmas": "navidad", 
         "happy": "contento", 
@@ -16,8 +15,9 @@ var languages = [
         "we": "nosotros", 
         "wish": "deseo", 
         "you": "tu"
-    },
-    {
+    };
+
+const german = {
         "merry": "frohlich", 
         "christmas": "weihnachten", 
         "happy": "gluklich", 
@@ -30,8 +30,9 @@ var languages = [
         "we": "wir", 
         "wish": "wunsch", 
         "you": "sie"
-    },
-   {
+    };
+
+const italian = {
         "merry": "allegro", 
         "christmas": "natale", 
         "happy": "contento", 
@@ -45,37 +46,34 @@ var languages = [
         "we": "noi", 
         "wish": "desiderio", 
         "you": "tu"
-   }
-    ]
+   };
 
- 
-    function englishInput(languagesArray) {
-        var words = document.getElementById('input').value.toLowerCase().split(' ');
-        if (words.every(function(e) {return e in languages[languagesArray]})) {
-            translate(words, languagesArray);
-        } else {
-            alert('No Match');
-        }
-    }
-    // function buttonClick() {
-    //     var buttons = document.getElementsByClassName('btn btn-success');
-    // //     buttons[0].onclick = 
-    // //     buttons[1].onclick = 
-    // //     buttons[2].onclick = 
-    // // }
-    
-                                                    
-    // // buttonClick();
-         
+    const inputBox = document.getElementById('input');
+    const spanishBtn = document.getElementById('spanish');
+    const germanBtn= document.getElementById('german');
+    const italianBtn = document.getElementById('italian');
+    const outputBox = document.getElementById('output');
+
    
 
-//  document.getElementById("spanishB").addEventListener("click", translator (event){
-//      console.log("click test", event);
-//  });
-
-// var spanishButton = document.getElementById('spanishB');
-
-// spanishButton.addEventListener('click', function (event) {
-//     console.log("click test", event);
-//   })
-// translator();
+    const allMyButtons = document.getElementsByClassName('btn btn-success');
+    for (let i = 0; i < allMyButtons.length; i++) {
+        allMyButtons[i].addEventListener('click', (e) => {
+            const userInput = inputBox.value.toLowerCase().split(' ');
+            let domOutput = [];
+            if (e.target.id === 'spanish'){
+                userInput.forEach((userInput) => {
+                domOutput.push(spanish[userInput]);
+                })
+                } else if (e.target.id === 'german'){
+                userInput.forEach((userInput) => {
+                domOutput.push(german[userInput]);
+                })
+            } else if (e.target.id === 'italian'){
+                userInput.forEach((userInput) => {
+                domOutput.push(italian[userInput]);
+                })
+            }
+            outputBox.innerHTML = domOutput.join(' ');
+        });
+    }
